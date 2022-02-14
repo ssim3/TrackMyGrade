@@ -11,6 +11,7 @@ client = gspread.authorize(creds)
 
 #Fetch the sheet
 sheet = client.open('LEAGUE CHAMP RATER').sheet1
-python_sheet = sheet.get_all_records()
-pp = pprint.PrettyPrinter()
-pp.pprint(python_sheet)
+python_sheet = sheet.get_all_records(["A2:C154"])
+print(python_sheet)
+
+    
