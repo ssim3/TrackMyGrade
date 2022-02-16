@@ -69,5 +69,5 @@ def update_records(name, email):
 
 
 choice, name, email = intro()
-
+create_empty(name, email)
 
