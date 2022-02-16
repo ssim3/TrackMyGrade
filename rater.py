@@ -1,21 +1,45 @@
-from turtle import title
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-import pprint
-from googleapiclient import discovery
+from dataclasses import fields
+from auth import spreadsheet_service
+from auth import drive_service
 
-# Authorizing the API
+# FUNCTIONS
+def intro():
+    print("""     ######### ########  ##    ##     ######   ########     ###    ########  ########    ##     ## ######## 
+         ##    ##     ##  ##  ##     ##    ##  ##     ##   ## ##   ##     ## ##          ###   ### ##       
+         ##    ##     ##   ####      ##        ##     ##  ##   ##  ##     ## ##          #### #### ##       
+         ##    ########     ##       ##   #### ########  ##     ## ##     ## ######      ## ### ## ######   
+         ##    ##   ##      ##       ##    ##  ##   ##   ######### ##     ## ##          ##     ## ##       
+         ##    ##    ##     ##       ##    ##  ##    ##  ##     ## ##     ## ##          ##     ## ##       
+         ##    ##     ##    ##        ######   ##     ## ##     ## ########  ########    ##     ## ######## """)
 
-scope = ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.file"]
-file_name = r"C:\Users\Tristan Sim\Downloads\Kali\client_key.json"
-creds = ServiceAccountCredentials.from_json_keyfile_name(file_name,scope)
-client = gspread.authorize(creds)
-
-service = discovery.build("sheets", "v4", credentials=creds)
-
-spreadsheet = {"properties": {"title": title}}
-
-spreadsheet = service.spreadsheets().create(body = spreadsheet, fields = "Grade Tracker").execute()
-print(spreadsheet.get("Grade Tracker"))
-
+    print("\nSelect your service: ")
+    print("1. Create blank Google Sheet")
+    print("2. Record grades into new Google Sheet")
+    print("3. Update exisitng Google Sheet")
     
+def create(name, email):
+    spreadsheet_details = {
+        "properties": {
+            "title": "TrackMyGrade - {}".format(name)
+        }
+    }
+
+    # CREATES AN GOOGLE SHEET 
+    sheet = spreadsheet_service.spreadsheets().create(body=spreadsheet_details, fields="spreadsheetId").execute()
+
+    # GETS GOOGLE SHEET ID
+    sheetId = sheet.get("spreadsheetId")
+    print("Your spreadsheet link: https://docs.google.com/spreadsheets/d/{0}/edit#gid=0".format(sheetId))
+
+    permission1 = {
+        "type": "user",
+        "role": "writer",
+        "emailAddress": "tristansimtristansim@gmail.com"
+    }
+    
+    drive_service.permissions().create(fileId=sheetId, body=permission1).execute()
+    return sheetId
+
+
+
+intro()
