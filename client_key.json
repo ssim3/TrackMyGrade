@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "lol-champ-rater",
+  "private_key_id": "ed04d1430f88af0af03ef74214e730f1cd6c4d92",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCuDD4WME5+R3Ru\nVmm4H5p2qfOu7LXmCXjpTWUNuZjvqr57lZ3Sh8ACVcLxwadaX5JBE3VzHASZfShX\noehRiYNzZ7woP1rdU7rC406d/Zt+nb4n9ZvehuvsjnQ+m1nH8h6yLy929AXxuCi7\naV1cNPD+ie3nUt4f69Oc+wssgqN9wR+hv4ym+AefQEUWy2xv1hOqaeireqffYlCW\nCGjd4vKCQ/pzGi8uEK81ThnK++FtTLVGn7wv57Ll2KYgjeZfo6+EIMwcf8R4Flb1\nTv2CWo4PZlgJNhr0vkg8nARIN040g777ureWJwhFA+/n8T/vo7+lwQSII6qKmCG6\ntpnRddbrAgMBAAECggEAMHydoU3U2C4s2/471n0LaYqAJhewtwSliA01HUU6u23s\nQf6U6I1D6wKcXABQkIc2deWnXymLiH0LC5rB31E5ayGXk/jOZgFI8rkjcjUwJ+5n\nBrfQNAaPXCf1b2mU8fRcI9SsWu2xaD0fL9KzHRhsmOSw/7QgyHDI059GZiCAzmvT\nwZdD8A93NA8vEams3iyWwP942zvAE1Xjep3vYwj4IAoOGMa8vG8gir9SzPS3wh1v\nZc+pReUZSy80Y0eE/lRbsZpJKT3/mwjD+FyqSdqLR0+BvjLynHq5W/hybCSiQfgY\nfrRbuOOdNzz7jKEfq0oFIB14GFlTCEGl4VOP05QVAQKBgQDv9JXy9EmyU2TZFw0j\n2lkKvyQMoxfe3JvAV3J8322wdUwTjzWYq0my0JUUWM/yFtXG32bQP3YGmnPTZBr3\nVgZ4k4mVFA9gJu7bnZTVW/gVevhiIh+HbaR/RGQmrmKELmWxhVX/g4CWkpzY3LfB\nnFteTN6wOiGMJFauGh2fmCUd6wKBgQC5r31i4gFfZDw9TVXpvmPfwBN5jIY2qnQw\nXxiTTPBr+3Pr3sjMAEB2ck/EZxgiI/aDkaTb55rt1azbuzIAsy4JZ7RrGEuWUyBG\nTdcL2qDLmpvsN8XkNZE1pgh7I8SsNJgautBmMnJPaoLQUvwhbucXo/1aYrnzeJfr\n0jbEjA7rAQKBgQC8P99P3pTeoQwyQCJf6VIH21LV0zHL9rj+WdyI2OR+Flfb1HNQ\n1biY34jFkLN7Eq0eO2+2msLmhU+vHQ8G0ed7uwup+DXj0kd75hG4nVFw0KuCmZCw\nt7Tg32/O5OqHFrtTXO7N6YX9GwKQJADJlPgdcCMYkFJ3Vp7mMbjh1wPvhwKBgHV0\nQzz8NuAPOGeSdqi/TM+o4Oi+8dq8YXiDfrkWLvIvAXmO17bq5dvGnRxgFgzqcLFy\nvDR5wS92PLxVIeD9dj5uwdoIaS+ybzTpYgDWj2Wa68w0z1F2bN7honW5/1rqfdhS\nmSY7/MCtYAfEpkXDsBvtGIJG9tbCTl7V/ty+t2UBAoGAc1XsXnOawQ5Jc2PkW3t/\nAVxIB7ST3QSB0J7L3/AkMp42IY4nQ3pbbrFD96U8CqsU2tPjeXMvmlTGZwIgQDyn\nELWmRABFmx3U8FF6j48sPK1aRSvh7o1kWestSO0CJb6Z8YB+pwyAIJME2TJGGZ1u\nhLKKawKUNFtfAlPKD3JD+c0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "lol-champ-rater@lol-champ-rater.iam.gserviceaccount.com",
+  "client_id": "115136668225550901284",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/lol-champ-rater%40lol-champ-rater.iam.gserviceaccount.com"
+}
