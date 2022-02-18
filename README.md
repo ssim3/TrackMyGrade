@@ -1,2 +1,2 @@
 # LOL-CHAMP-RATER
- Massive waste of time
+ This project is a massive waste of time
