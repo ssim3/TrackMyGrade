@@ -1,4 +1,5 @@
 from dataclasses import fields
+from optparse import Values
 from auth import spreadsheet_service
 from auth import drive_service
 
@@ -40,7 +41,11 @@ def intro():
         print("Enter a valid response!")
         intro()
 
-    return user_choice, name, email
+    if (user_choice == 1):
+        create_empty(name, email)
+    elif (user_choice == 2):
+        sheetId = input("Please enter the sheetId you have received from Service 1: ")
+        update_records(sheetId)
 
 # CREATES AN EMPTY SHEETS FILE
 def create_empty(name, email):
@@ -59,6 +64,7 @@ def create_empty(name, email):
     print("Your spreadsheet link: https://docs.google.com/spreadsheets/d/{0}/edit#gid=0".format(sheetId))
     print("Your Sheet ID (For Service 2): " + sheetId)
 
+    # Giving user editor permissions
     permission1 = {
         "type": "user",
         "role": "writer",
@@ -67,8 +73,10 @@ def create_empty(name, email):
     
     drive_service.permissions().create(fileId=sheetId, body=permission1).execute()
 
+    value_range_body = {"majorDimension": "ROWS", "values": [["Subject", "Grade as %"]]}
+    spreadsheet_service.spreadsheets().values().update(spreadsheetId=sheetId, valueInputOption = "USER_ENTERED", range = "Sheet1!A1", body=value_range_body).execute()
     
-
+#Update records of previously created Google sheet
 def update_records(sheetId):
     grades = []
     def add_grade():
@@ -79,26 +87,18 @@ def update_records(sheetId):
 
     add_grade()
 
-    body = {
-        'valueInputOption': 'USER_ENTERED',
-        'data': grades
-    }
+    value_range_body = {"majorDimension": "ROWS", "values": grades}
 
-    request = spreadsheet_service.spreadsheets().values().batchUpdate(spreadsheetId=sheetId, body=body)
-    response = request.execute()
+    spreadsheet_service.spreadsheets().values().update(spreadsheetId=sheetId, valueInputOption = "USER_ENTERED", range = "Sheet1!A2", body=value_range_body).execute()
+    
 
 
 
         
 
 
-choice, name, email = intro()
+intro()
 
-if (choice == 1):
-    create_empty(name, email)
-elif (choice == 2):
-    sheetId = input("Please enter the sheetId you have received from Service 1: ")
-    update_records(sheetId)
 
 
 
